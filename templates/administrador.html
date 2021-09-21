@@ -5,59 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Admin</title>
+
 </head>
+
 <body>
     <form action="{% url 'administrador' %}"></form>
-    <h1>Bem Vindo</h1>
+    <h1>Lista de Todos os Candidatos</h1>
     <table border="5px" width="400px">
-        <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome Do Curso</th>
-                <th scope="col">Data</th>
+                <th scope="col">Nome do Candidato</th>
+                <th scope="col">Email</th>
             </tr>
-        </thead>
-        {% for value in cursos %}
+        {% for value in candidato %}
         <tbody>
             <tr>
-                <th scope="row">{{ value.id }}</th> 
-                <td>{{ value.nome_curso }}</td>
-                <td>{{ value.data }}</td>
+                <td> <a href="{% url 'curriculo' %}">{{ value.username }}</a></td>
+                <td>{{ value.email }}</td> 
             </tr>
         </tbody>
         {% endfor %}
-    </table>
-    <table border="5px" width="400px">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Experiencias</th>
-                <th scope="col">Local</th>
-            </tr>
-        </thead>
-        {% for value in experiencias %}
-        <tbody>
-            <tr>
-                <th scope="row">{{ value.id }}</th> 
-                <td>{{ value.cargo }}</td>
-                <td>{{ value.local }}</td>
-            </tr>
-        </tbody>
-        {% endfor %}
-    </table>
-        </table>
-    <table border="5px" width="400px">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">{{ User.nome }}</th> 
-            </tr>
-        </tbody>
-    </table>
-</body>
-</html>

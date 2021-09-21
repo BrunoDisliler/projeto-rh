@@ -15,7 +15,7 @@ class Usuario(models.Model):
     estado = models.CharField(max_length=50)
     cep = models.IntegerField(null=True)
     tel_1 = models.CharField(max_length=50)
-    tel_2 = models.CharField(max_length=50)
+    tel_2 = models.CharField(max_length=50) 
 
 
 class Sobre(models.Model):

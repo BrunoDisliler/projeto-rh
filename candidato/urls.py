@@ -11,4 +11,5 @@ urlpatterns = [
     path('botao_proximo/', views.botao_proximo, name='botao_proximo'),
     path('botao_finalizar/', views.botao_finalizar, name='botao_finalizar'),
     path('administrador/', views.administrador, name='administrador'),
+    path('curriculo/', views.curriculo, name='curriculo'),
 ]

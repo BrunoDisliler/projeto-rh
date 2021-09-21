@@ -165,15 +165,29 @@ def botao_finalizar(request):
 
 def administrador(request):
     if request.user.is_authenticated:
-        cursos = Cursos.objects.all
-        experiencias = Experiencias.objects.all
         candidato = User.objects.all
+        usuario = Usuario.objects.all
         return render(request, 'administrador.html', 
         {
-            'cursos': cursos,
-            'experiencias': experiencias,
             'candidato': candidato,
+            'usuario': usuario,
         })
     else:
         return redirect('login')
 
+
+def curriculo(request):
+    if request.user.is_authenticated:
+        usuario = Usuario.objects.all
+        cursos = Cursos.objects.all
+        experiencias = Experiencias.objects.all
+        sobre = Sobre.objects.all
+        return render(request, 'curriculo.html', 
+        {
+            'usuario': usuario,
+            'cursos': cursos,
+            'experiencias': experiencias,
+            'sobre': sobre,
+        })
+    else:
+        return redirect('login')
